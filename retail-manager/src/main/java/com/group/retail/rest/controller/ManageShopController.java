@@ -2,13 +2,18 @@ package com.group.retail.rest.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.group.retail.model.Shop;
+import com.group.retail.services.AdminService;
 
 /**
  * The DirectoryController class is a RESTful web service controller. The
@@ -23,6 +28,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/admin/api/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ManageShopController extends BaseController {
 
+	
+	@Autowired
+	private AdminService adminService;
 	
 	/**
      * Web service endpoint to create new Shop resource. The service returns
@@ -39,10 +47,16 @@ public class ManageShopController extends BaseController {
      * @return A ResponseEntity contains the status of resource.
      */
 	@RequestMapping(value = "v1/create", method = RequestMethod.POST)
-	public ResponseEntity<String> createShopDetails(@Valid @RequestBody String body) {
-		
+	public ResponseEntity<String> createShopDetails(@Valid @RequestBody Shop body, BindingResult bindingResults) {
 		logger.info("> Create Shop Details");
 		
-		return new ResponseEntity<String>("Resources Created Successfully.", HttpStatus.CREATED);
+		boolean result = adminService.addShopAddress(body);
+		
+		if(!result) {
+			return new ResponseEntity<String>("Resources Created Successfully.", HttpStatus.CREATED);
+		} else {
+			return new ResponseEntity<String>("Unable to create resource.", HttpStatus.OK);
+		}
+		
 	}
 }

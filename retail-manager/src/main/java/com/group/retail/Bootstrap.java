@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @EnableCaching
-@ComponentScan("com.group.retail")
+@ComponentScan("com.group.retail.*")
 public class Bootstrap {
 
 private static final Logger logger = LoggerFactory.getLogger(Bootstrap.class);
