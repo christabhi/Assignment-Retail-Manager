@@ -2,8 +2,6 @@ package com.group.retail.rest.controller;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,12 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/admin/api/", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ManageShopController {
+public class ManageShopController extends BaseController {
 
-	/**
-	 * The logger for this class hierarchy
-	 */
-	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	/**
      * Web service endpoint to create new Shop resource. The service returns
