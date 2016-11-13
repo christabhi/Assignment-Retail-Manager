@@ -5,6 +5,11 @@ import java.util.Map;
 
 import com.group.retail.model.Shop;
 
+/**
+ * The ApplicationUtils class defines to use for persistance
+ * 
+ * @author Abhishek Verma
+ */
 public class ApplicationUtils {
 
 	private static final Map<Integer, Shop> SHOPDATA = new HashMap<Integer, Shop>();
@@ -24,5 +29,9 @@ public class ApplicationUtils {
 	
 	public static Shop getShopData(int postCode) {
 		return SHOPDATA.get(postCode);
+	}
+	
+	public static Map<Integer, Shop> getAllShopData() {
+		return SHOPDATA;
 	}
 }

@@ -16,7 +16,7 @@ import com.group.retail.model.Shop;
 import com.group.retail.services.AdminService;
 
 /**
- * The DirectoryController class is a RESTful web service controller. The
+ * The ManageShopController class is a RESTful web service controller. The
  * <code>@RestController</code> annotation informs Spring that each
  * <code>@RequestMapping</code> method returns a <code>@ResponseBody</code>
  * which, by default, contains a ResponseEntity converted into JSON with an
@@ -35,7 +35,7 @@ public class ManageShopController extends BaseController {
 	/**
      * Web service endpoint to create new Shop resource. The service returns
      * the status of the newly created resource as JSON.
-     * @URI: /admin/api/v1/create
+     * @URI: /rms/admin/api/v1/create
      * @RequestBody: 
      * {  
    	 *		"shopName":"testShop",

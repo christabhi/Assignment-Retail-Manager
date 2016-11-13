@@ -15,6 +15,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.group.retail.services.utils.GoogleGeoServiceHttpRequest;
 
+/**
+ * The GoogleGeoServiceImpl encapsulates all business behaviors operating on the
+ * Geo Service.
+ * 
+ * @author Abhishek Verma
+ */
 @Service
 public class GoogleGeoServiceImpl implements GoogleGeoService {
 
@@ -23,9 +29,16 @@ public class GoogleGeoServiceImpl implements GoogleGeoService {
 	 */
 	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 	
+	/**
+	 * Initialize http request object
+	 * */
 	private GoogleGeoServiceHttpRequest httpRequest = new GoogleGeoServiceHttpRequest();
 	
+	/**
+	 * Initialize JSON Object Mapper
+	 * */
 	private ObjectMapper mapper = new ObjectMapper();
+	
 	
 	TypeReference<HashMap<String,Object>> typeRef = new TypeReference<HashMap<String,Object>>() {};
 

@@ -10,6 +10,12 @@ import java.net.URL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * The GoogleGeoServiceHttpRequest class is use to make REST using google API to 
+ * fetch Longitude and Latitude using postCode.
+ * 
+ * @author Abhishek Verma
+ */
 public class GoogleGeoServiceHttpRequest {
 	
 	/**

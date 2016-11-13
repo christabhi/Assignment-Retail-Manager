@@ -10,7 +10,7 @@ public class Shop {
 	@NotNull
 	public ShopAddress shopAddress;
 	
-	public String shopLongitude;
+	public double shopLongitude;
 	
-	public String shopLatitude;
+	public double shopLatitude;
 }

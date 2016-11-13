@@ -28,7 +28,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan("com.group.retail.*")
 public class Bootstrap {
 
-private static final Logger logger = LoggerFactory.getLogger(Bootstrap.class);
+	protected static final Logger logger = LoggerFactory.getLogger(Bootstrap.class);
 	
 	/**
      * Entry point for the application.
